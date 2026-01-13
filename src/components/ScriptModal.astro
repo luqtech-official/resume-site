@@ -119,9 +119,9 @@ const { id, title, image, fullDescription } = Astro.props;
   }
 
   dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.7);
+    /* backdrop-filter removed to fix iOS Safari rendering bug */
+    
     /* Initial state for backdrop - CRITICAL FOR iOS */
     opacity: 0;
     animation: backdrop-fade 0.3s ease-out forwards;
