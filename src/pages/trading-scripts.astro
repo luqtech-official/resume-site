@@ -119,28 +119,27 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
   });
 
   document.addEventListener('click', (e) => {
-    // Type assertion for cleaner TS usage
     const target = e.target as HTMLElement;
-    
-    // Find trigger
-    const btnTrigger = target.closest('.view-script-btn');
+    const btnTrigger = target.closest('.view-script-btn') || 
+                       (target.classList?.contains('view-script-btn') ? target : null);
     
     if (btnTrigger) {
+        e.preventDefault();
+        e.stopPropagation(); // Add this for iOS
+        
         const modalId = btnTrigger.getAttribute('data-modal-id');
-        e.preventDefault(); 
         
         if (modalId) {
             const modal = document.getElementById(modalId) as HTMLDialogElement;
             if (modal) {
                 modal.showModal();
-                // Use requestAnimationFrame to ensure modal is rendered first
                 requestAnimationFrame(() => {
                     document.body.style.overflow = 'hidden';
                 });
             }
         }
     }
-  });
+});
 </script>
 
 <style>
