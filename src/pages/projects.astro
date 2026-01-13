@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "Consumer Credit Re-platforming",
+    role: "Associate Manager / Business Consultant",
+    problem: "CIMB's legacy credit management system involved heavy manual processing, leading to multi-day approval cycles and operational bottlenecks.",
+    actions: [
+      "Led cross-functional teams to define requirements for a modern, automated credit architecture.",
+      "Designed workflow logic for near-instant approval processes for consumer credit applications.",
+      "Spearheaded Production Verification Testing (PVT) during critical deployment windows.",
+      "Developed and delivered SQL training for consultants to improve data-driven decision making."
+    ],
+    outcomes: [
+      "Successfully reduced processing time from days to near-instant approvals.",
+      "Improved system reliability across CIMB Singapore and Malaysia branches.",
+      "Strengthened consultant technical capabilities through customized SQL training."
+    ]
+  },
+  {
+    title: "TradingView Strategy Ecosystem",
+    role: "Founder / Lead Developer",
+    problem: "Traders lacked customized, rule-based visual indicators to execute complex strategies, leading to emotional trading and inconsistent results.",
+    actions: [
+      "Applied enterprise SDLC methodologies to deliver over 150+ bespoke trading indicators.",
+      "Translated vague trading 'ideas' into precise mathematical scripts and logic gates.",
+      "Managed end-to-end delivery: requirements, iterative testing, and deployment on TradingView.",
+      "Open-sourced high-value indicators to build community trust and authority."
+    ],
+    outcomes: [
+      "Achieved 6-figure revenue in the first year of operations.",
+      "2 indicators selected as 'Editor's Picks' by TradingView global team.",
+      "Trusted by established Malaysian trading educators for proprietary strategy scripting."
+    ]
+  },
+  {
+    title: "Banking System Integration (PCS)",
+    role: "Senior System Analyst",
+    problem: "Post-go-live issues in Loan Origination Systems were causing significant operational strain on active project teams at major banks.",
+    actions: [
+      "Selected as a founding member of the Proactive Customer Service (PCS) team to handle complex production issues.",
+      "Mastered unique system requirements for multiple banks (Agrobank, Bank Rakyat, Bank Persatuan) to provide rapid fixes.",
+      "Coordinated integrations between LOS and Core Banking, CCRIS, and CTOS platforms.",
+      "Ensured requirements clarity between business stakeholders and IT during high-pressure fix cycles."
+    ],
+    outcomes: [
+      "Significantly reduced the operational burden on active development teams.",
+      "Improved client satisfaction through faster resolution of post-deployment change requests.",
+      "Maintained system integrity across diverse regulatory environments."
+    ]
+  }
+];
+---
+
+<Layout title="Projects">
+  <div class="projects-hero">
+    <h1 class="page-title">Strategic Projects</h1>
+    <p class="page-intro">
+      A selection of high-impact initiatives across enterprise banking and technical consultancy, demonstrating a commitment to analytical rigor and functional excellence.
+    </p>
+  </div>
+
+  <div class="projects-list">
+    {projects.map(project => (
+      <ProjectCard 
+        title={project.title}
+        role={project.role}
+        problem={project.problem}
+        actions={project.actions}
+        outcomes={project.outcomes}
+      />
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .projects-hero {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .page-intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text-body);
+    max-width: 700px;
+    font-weight: 300;
+  }
+
+  .projects-list {
+    margin-bottom: var(--spacing-xl);
+  }
+</style>

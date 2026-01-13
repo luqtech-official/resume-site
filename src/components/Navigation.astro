@@ -1,0 +1,82 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<nav class="nav-container">
+  <div class="container nav-wrapper">
+    <ul class="nav-list">
+      <li>
+        <a href="/" class={pathname === "/" ? "active" : ""}>Overview</a>
+      </li>
+      <li>
+        <a href="/projects" class={pathname.startsWith("/projects") ? "active" : ""}>Projects</a>
+      </li>
+      <li>
+        <a href="/resume" class={pathname.startsWith("/resume") ? "active" : ""}>Resume</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav-container {
+    background-color: rgba(250, 250, 250, 0.9); /* Matching var(--color-bg) with opacity */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+  }
+
+  .nav-list a {
+    display: block;
+    padding: var(--spacing-md) 0;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav-list a:hover {
+    color: var(--color-text-main);
+  }
+
+  .nav-list a.active {
+    color: var(--color-primary);
+  }
+
+  .nav-list a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-primary);
+  }
+
+  @media (max-width: 600px) {
+    .nav-list {
+      gap: var(--spacing-md);
+    }
+    
+    .nav-list a {
+      font-size: 0.7rem;
+    }
+  }
+</style>
