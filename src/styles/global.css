@@ -22,6 +22,10 @@
   --spacing-xl: 6rem;
 
   --container-width: 850px;
+  
+  /* TradingView Accents */
+  --color-tv-green: #22ab94;
+  --color-tv-black: #131722;
 }
 
 /* Reset & Base Styles */
@@ -73,4 +77,32 @@ a:hover {
 
 .section {
   padding: var(--spacing-lg) 0;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-light);
+  opacity: 1;
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-text-main);
+  background-color: transparent;
 }

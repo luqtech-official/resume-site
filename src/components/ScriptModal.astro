@@ -2,10 +2,11 @@
 interface Props {
   id: string;
   title: string;
+  image: string;
   fullDescription?: string;
 }
 
-const { id, title, fullDescription } = Astro.props;
+const { id, title, image, fullDescription } = Astro.props;
 ---
 
 <dialog id={id} class="script-modal">
@@ -18,6 +19,10 @@ const { id, title, fullDescription } = Astro.props;
     <div class="modal-body">
       <div class="global-note">
         <strong>Note:</strong> This script is meant to be used inside the <a href="https://www.tradingview.com/" target="_blank" rel="noopener noreferrer">TradingView</a> platform.
+      </div>
+
+      <div class="modal-image">
+        <img src={image} alt={title} />
       </div>
       
       {fullDescription && (
@@ -171,6 +176,20 @@ const { id, title, fullDescription } = Astro.props;
     color: var(--color-text-body);
   }
 
+  .modal-image {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .full-description {
     margin-bottom: 1.5rem;
     line-height: 1.6;
@@ -231,6 +250,6 @@ const { id, title, fullDescription } = Astro.props;
   
   .script-code :global(code) {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9rem;
+    font-size: 0.65rem;
   }
 </style>

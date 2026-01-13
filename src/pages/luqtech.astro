@@ -1,103 +1,532 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import { Image } from 'astro:assets';
+
+// Import local images
+import proDashboardImg from '../../public/pro-dashboard.png';
+import sigmaSpikesImg from '../../public/indices-sector-sigmaspikes.png';
+import mriImg from '../../public/mean-reversion-channel-mri.png';
+import testimonial1 from '../../public/Luq Technology Public Testimonial 1.png';
+import testimonial2 from '../../public/Luq Technology Public Testimonial 2.png';
+import collageShowcase from '../../public/Luq Technology OpenSourced Indicator Collage Showcase.png';
 
 const projects = [
   {
-    title: "Consumer Credit Re-platforming",
-    role: "Associate Manager / Business Consultant",
-    problem: "CIMB's legacy credit management system involved heavy manual processing, leading to multi-day approval cycles and operational bottlenecks.",
-    actions: [
-      "Led cross-functional teams to define requirements for a modern, automated credit architecture.",
-      "Designed workflow logic for near-instant approval processes for consumer credit applications.",
-      "Spearheaded Production Verification Testing (PVT) during critical deployment windows.",
-      "Developed and delivered SQL training for consultants to improve data-driven decision making."
-    ],
-    outcomes: [
-      "Successfully reduced processing time from days to near-instant approvals.",
-      "Improved system reliability across CIMB Singapore and Malaysia branches.",
-      "Strengthened consultant technical capabilities through customized SQL training."
-    ]
+    title: "Pro Dashboard: Multi-Condition Market Analysis",
+    type: "Complex Logic & UI Design",
+    challenge: "A professional trading group needed to monitor 4 distinct market conditions (Trend, Volume, Volatility, Key Levels) across multiple timeframes simultaneously, but standard charts were too cluttered to be usable.",
+    ba_approach: "I structured requirement sessions to categorize essential data points, designed a tabular UI wireframe to maximize information density, and iteratively refined the logic for 'at-a-glance' status indicators.",
+    outcome: "Delivered a 'Pro Dashboard' utility that condenses 20+ data points into a single panel, reducing analysis time by ~40% for the client's morning routine.",
+    image: proDashboardImg,
+    tech_note: "Implemented using Pine Script v4 with dynamic table arrays and regression channel logic."
   },
   {
-    title: "TradingView Strategy Ecosystem",
-    role: "Founder / Lead Developer",
-    problem: "Traders lacked customized, rule-based visual indicators to execute complex strategies, leading to emotional trading and inconsistent results.",
-    actions: [
-      "Applied enterprise SDLC methodologies to deliver over 150+ bespoke trading indicators.",
-      "Translated vague trading 'ideas' into precise mathematical scripts and logic gates.",
-      "Managed end-to-end delivery: requirements, iterative testing, and deployment on TradingView.",
-      "Open-sourced high-value indicators to build community trust and authority."
-    ],
-    outcomes: [
-      "Achieved 6-figure revenue in the first year of operations.",
-      "2 indicators selected as 'Editor's Picks' by TradingView global team.",
-      "Trusted by established Malaysian trading educators for proprietary strategy scripting."
-    ]
+    title: "Sector SigmaSpikes",
+    type: "Algorithmic Screener",
+    isEditorsPick: true,
+    challenge: "Traders in the Malaysian market struggled to identify sector rotation early. Existing tools were either too expensive or lacked specific 'abnormal movement' detection.",
+    ba_approach: "Defined the statistical model ('Sigma Spikes') based on standard deviation of returns. Mapped 13 key sector indices and designed a screener view to highlight significant outliers.",
+    outcome: "Selected as an 'Editor's Pick' by TradingView. The tool allows users to instantly spot capital flow into specific sectors, becoming a staple for local breakout traders.",
+    image: sigmaSpikesImg,
+    tech_note: "Features a custom security function to query 13 tickers simultaneously without hitting execution limits."
   },
   {
-    title: "Banking System Integration (PCS)",
-    role: "Senior System Analyst",
-    problem: "Post-go-live issues in Loan Origination Systems were causing significant operational strain on active project teams at major banks.",
-    actions: [
-      "Selected as a founding member of the Proactive Customer Service (PCS) team to handle complex production issues.",
-      "Mastered unique system requirements for multiple banks (Agrobank, Bank Rakyat, Bank Persatuan) to provide rapid fixes.",
-      "Coordinated integrations between LOS and Core Banking, CCRIS, and CTOS platforms.",
-      "Ensured requirements clarity between business stakeholders and IT during high-pressure fix cycles."
-    ],
-    outcomes: [
-      "Significantly reduced the operational burden on active development teams.",
-      "Improved client satisfaction through faster resolution of post-deployment change requests.",
-      "Maintained system integrity across diverse regulatory environments."
-    ]
+    title: "Mean Reversion Channel",
+    type: "Educator Collaboration",
+    isEditorsPick: true,
+    challenge: "A trading educator needed a visual tool to teach 'Mean Reversion' theory without overwhelming students with complex math formulas.",
+    ba_approach: "Translated the proprietary strategy (based on Ehlers' filters) into a scalable teaching tool. Focused on clear visual cues (bands) rather than raw numbers to aid pattern recognition.",
+    outcome: "Selected as an 'Editor's Pick' by TradingView. The script became a core part of their curriculum, helping non-technical students grasp complex statistical concepts through visual learning.",
+    image: mriImg,
+    tech_note: "Combines SuperSmoother algorithms with dynamic bands to create a noise-filtered trend visualizer."
   }
 ];
 ---
 
-<Layout title="Projects">
-  <div class="projects-hero">
-    <h1 class="page-title">Strategic Projects</h1>
-    <p class="page-intro">
-      A selection of high-impact initiatives across enterprise banking and technical consultancy, demonstrating a commitment to analytical rigor and functional excellence.
-    </p>
-  </div>
+<Layout title="Luq Technology | BA to Founder" isFullWidth={true}>
+  <!-- Hero Section -->
+  <section class="luq-hero">
+    <div class="content-wrapper">
+      <h1 class="hero-title">From Enterprise Banking Systems<br>to 150+ Trading Solutions</h1>
+      <p class="hero-sub">How Business Analysis skills translated to entrepreneurial success</p>
+      
+      <div class="stats-banner">
+        <div class="stat-item">
+          <span class="stat-val">6-figure</span>
+          <span class="stat-label">Revenue</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">150+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-item highlight">
+          <span class="stat-val">2</span>
+          <span class="stat-label">Editor's Picks</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">9+ Years</span>
+          <span class="stat-label">BA Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="projects-list">
-    {projects.map(project => (
-      <ProjectCard 
-        title={project.title}
-        role={project.role}
-        problem={project.problem}
-        actions={project.actions}
-        outcomes={project.outcomes}
-      />
-    ))}
-  </div>
+  <!-- Story Section -->
+  <section class="luq-story section">
+    <div class="content-wrapper">
+      <div class="story-content">
+        <p class="story-lead">In 2021, I took my BA expertise into uncharted territory.</p>
+        <p>
+          Leaving a senior role in banking, I founded Luq Technology to apply enterprise-grade rigor to the retail trading space. 
+          The shift wasn't about changing careers—it was about changing contexts. I went from designing <strong>Enterprise Credit Systems</strong> to architecting <strong>Individual Trading Solutions</strong>.
+        </p>
+        <p>
+          The core skill set remained identical: translating vague client needs into precise technical requirements, managing stakeholder expectations, and delivering robust, error-free software.
+        </p>
+        <div class="closure-note">
+          <p>
+            <strong>The Pivot:</strong> When AI democratized coding in late 2024, I recognized the market shift. I chose to return to what I do best—solving complex, high-stakes problems for regulated financial institutions, bringing with me the resilience and agility of a founder.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="luq-showcase section">
+    <div class="content-wrapper">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-desc">Selected works demonstrating Requirement Analysis, Solution Design, and Delivery.</p>
+      
+      <div class="project-grid">
+        {projects.map((project, index) => (
+          <article class="project-item">
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="project-type">{project.type}</span>
+                {project.isEditorsPick && <span class="badge-editors-pick">★ Editor's Pick</span>}
+              </div>
+              <h3 class="project-title">{project.title}</h3>
+              
+              <div class="ba-breakdown">
+                <div class="breakdown-item">
+                  <span class="label">The Challenge</span>
+                  <p>{project.challenge}</p>
+                </div>
+                <div class="breakdown-item">
+                  <span class="label">BA Approach</span>
+                  <p>{project.ba_approach}</p>
+                </div>
+                <div class="breakdown-item">
+                  <span class="label">Outcome</span>
+                  <p>{project.outcome}</p>
+                </div>
+              </div>
+              
+              <div class="tech-note">
+                <small><strong>Technical Note:</strong> {project.tech_note}</small>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div class="img-container">
+                <Image src={project.image} alt={project.title} width={600} class="project-img" />
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="luq-portfolio section">
+    <div class="content-wrapper">
+      <h2 class="section-title">Technical Portfolio</h2>
+      <p class="section-desc">Public library of scripts and institutional-grade indicators.</p>
+      
+      <div class="portfolio-grid">
+        <div class="tv-profile-card">
+          <div class="tv-header">
+            <span class="tv-logo">TradingView</span>
+            <h3>fareidzulkifli</h3>
+          </div>
+          <p>Top-rated Pine Script Developer with a focus on institutional-grade tools.</p>
+          <div class="tv-stats">
+            <span><strong>High Reputation</strong> in Community</span>
+            <span><strong>2,000+</strong> Boosts</span>
+          </div>
+          <a href="https://www.tradingview.com/u/fareidzulkifli/#published-scripts" target="_blank" class="btn">View Full Profile on TradingView</a>
+        </div>
+        
+        <div class="portfolio-visual">
+          <Image src={collageShowcase} alt="Luq Technology Indicator Showcase" width={800} class="collage-img" />
+          <p class="caption">A collection of open-sourced and proprietary technical indicators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recognition & Testimonials -->
+  <section class="luq-recognition section">
+    <div class="content-wrapper">
+      <h2 class="section-title">Market Validation</h2>
+      <p class="section-desc">Evidence of impact through client feedback and community recognition.</p>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-item">
+          <Image src={testimonial1} alt="Client Recognition 1" width={500} class="recognition-img" />
+        </div>
+        <div class="testimonial-item">
+          <Image src={testimonial2} alt="Client Recognition 2" width={500} class="recognition-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="luq-closing section">
+    <div class="content-wrapper">
+      <div class="closing-card">
+        <h2>What This Means for Your Next Role</h2>
+        <p class="closing-text">
+          This 4-year journey reinforced core BA competencies while adding entrepreneurial resilience.
+          I am ready to bring both <strong>enterprise rigor</strong> and <strong>startup adaptability</strong> to my next Business Analyst role.
+        </p>
+        <div class="action-area">
+          <a href="/resume" class="btn">View Professional Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-  .projects-hero {
+  /* Local Scoped Styles */
+  
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  /* Hero */
+  .luq-hero {
     padding: var(--spacing-xl) 0 var(--spacing-lg);
+    background: linear-gradient(to bottom, var(--color-bg) 0%, #f0f4f8 100%);
     border-bottom: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+
+  .hero-sub {
+    font-size: 1.25rem;
+    color: var(--color-text-body);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  .stats-banner {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-item.highlight .stat-val {
+    color: var(--color-tv-green);
+  }
+
+  .stat-val {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  /* Story */
+  .story-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .story-lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
     margin-bottom: var(--spacing-md);
   }
 
-  .page-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
+  .closure-note {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: white;
+    border-left: 4px solid var(--color-tv-green);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  /* Showcase */
+  .section-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-desc {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  .project-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .project-item:last-child {
+    border-bottom: none;
+  }
+
+  .project-item:nth-child(even) {
+    direction: rtl; /* Switch order for visual interest */
+  }
+
+  .project-item:nth-child(even) .project-content {
+    direction: ltr; /* Reset text direction */
+  }
+
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .project-type {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
     letter-spacing: 0.05em;
   }
 
-  .page-intro {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--color-text-body);
-    max-width: 700px;
-    font-weight: 300;
+  .badge-editors-pick {
+    background-color: var(--color-tv-green);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  .projects-list {
-    margin-bottom: var(--spacing-xl);
+  .project-title {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+  }
+
+  .ba-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .breakdown-item .label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-text-main);
+    margin-bottom: 0.2rem;
+  }
+
+  .breakdown-item p {
+    font-size: 0.95rem;
+    color: var(--color-text-body);
+    line-height: 1.5;
+  }
+
+  .tech-note {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    border-top: 1px dashed var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .img-container {
+    background: white;
+    padding: var(--spacing-xs);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+  .img-container:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+
+  /* Portfolio Grid */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .portfolio-visual {
+    text-align: center;
+  }
+
+  .collage-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-border);
+  }
+
+  .caption {
+    margin-top: var(--spacing-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* Recognition */
+  .luq-recognition {
+    background-color: #f8f9fa;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .testimonial-item {
+    background: white;
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease;
+  }
+
+  .testimonial-item:hover {
+    transform: scale(1.02);
+  }
+
+  .recognition-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
+  /* Portfolio Card */
+  .tv-profile-card {
+    background: var(--color-tv-black);
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  .tv-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .tv-logo {
+    display: block;
+    font-weight: 700;
+    color: var(--color-tv-green);
+    margin-bottom: 0.5rem;
+  }
+
+  .tv-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    font-size: 0.9rem;
+  }
+
+  /* Closing */
+  .closing-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .closing-text {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    
+    .project-item, .project-item:nth-child(even) {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+    
+    .portfolio-grid, .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .stats-banner {
+      gap: var(--spacing-md);
+    }
   }
 </style>

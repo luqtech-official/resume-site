@@ -48,6 +48,7 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
           <ScriptModal 
             id={modalId} 
             title={script.frontmatter.title}
+            image={script.frontmatter.image}
             fullDescription={script.frontmatter.fullDescription}
           >
               <Content />
