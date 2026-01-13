@@ -84,25 +84,23 @@ const { id, title, image, fullDescription } = Astro.props;
     border: none;
     border-radius: 8px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    max-width: 800px;
+    
     width: 90%;
-    max-height: 90vh;
-    max-height: 90dvh; /* Better for mobile browsers */
+    max-width: 800px;
+    height: 90vh;      /* Fallback */
+    height: 90dvh;     /* Dynamic viewport height for mobile */
+    max-height: 900px; /* Optional cap */
+    
     background: var(--color-white);
     color: var(--color-text-body);
+    margin: auto;      /* Keeps it centered */
     
-    /* Centering */
-    margin: auto;
-
-    /* iOS Safari fixes */
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
+    display: none;      /* Default hidden */
+    overflow: hidden; /* Let the inner content handle scrolling */
   }
 
   dialog[open] {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 
   dialog::backdrop {
@@ -113,8 +111,9 @@ const { id, title, image, fullDescription } = Astro.props;
   .modal-content {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    min-height: 0; /* Crucial for scrolling inside flex */
+    height: 100%; 
+    width: 100%;
+    min-height: 0; 
   }
 
   .modal-header {

@@ -133,9 +133,10 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
             const modal = document.getElementById(modalId) as HTMLDialogElement;
             if (modal) {
                 modal.showModal();
-                requestAnimationFrame(() => {
+                // iOS Safari fix: Use a small timeout instead of requestAnimationFrame
+                setTimeout(() => {
                     document.body.style.overflow = 'hidden';
-                });
+                }, 50);
             }
         }
     }
