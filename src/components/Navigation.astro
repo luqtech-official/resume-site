@@ -7,19 +7,21 @@ const currentPath = pathname.slice(1); // remove the first "/"
   <div class="container nav-wrapper">
     <ul class="nav-list">
       <li>
-        <a href="/" class={pathname === "/" ? "active" : ""}>Home</a>
-      </li>
-      <li>
-        <a href="/luqtech" class={pathname.startsWith("/luqtech") ? "active" : ""}>LUQ Technology</a>
-      </li>
-      <li>
-        <a href="/resume" class={`multiline-nav-item ${pathname.startsWith("/resume") ? "active" : ""}`}>
+        <a href="/" class={`multiline-nav-item ${pathname === "/" ? "active" : ""}`}>
           <span>Resume</span>
           <span>(Business Analyst)</span>
         </a>
       </li>
       <li>
-        <a href="/trading-scripts" class={pathname.startsWith("/trading-scripts") ? "active" : ""}>Trading Scripts</a>
+        <a href="/luqtech" class={`multiline-nav-item ${pathname.startsWith("/luqtech") ? "active" : ""}`}>
+          <span>LUQ Technology</span>
+          <span>Founder → BA</span>
+        </a>
+      </li>
+      <li>
+        <a href="/trading-scripts" class={`multiline-nav-item ${pathname.startsWith("/trading-scripts") ? "active" : ""}`}>
+          <span>Showcase</span>
+        </a>
       </li>
     </ul>
   </div>
@@ -43,11 +45,19 @@ const currentPath = pathname.slice(1); // remove the first "/"
   .nav-list {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .nav-list li {
+    flex: 1;
   }
 
   .nav-list a {
     display: block;
+    height: 100%;
+    /* display: flex; */
+    justify-content: center;
     padding: 1rem 0;
     color: var(--color-text-muted);
     font-weight: 500;
@@ -57,14 +67,17 @@ const currentPath = pathname.slice(1); // remove the first "/"
     transition: color 0.3s ease;
     position: relative;
     white-space: nowrap;
+    text-align: center;
   }
 
   .multiline-nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     white-space: normal;
     line-height: 1.2;
+    text-align: center;
   }
 
   .multiline-nav-item span {
