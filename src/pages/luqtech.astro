@@ -43,25 +43,25 @@ const projects = [
 ];
 ---
 
-<Layout title="Luq Technology | BA to Founder" isFullWidth={true}>
+<Layout title="Luq Technology | Founder to BA" isFullWidth={true}>
   <!-- Hero Section -->
   <section class="luq-hero">
     <div class="content-wrapper">
-      <h1 class="hero-title">From Enterprise Banking Systems<br>to 150+ Trading Solutions</h1>
-      <p class="hero-sub">How Business Analysis skills translated to entrepreneurial success</p>
+      <h1 class="hero-title">From Highly Regulated Banking Domain<br>to 150+ Trading Solutions</h1>
+      <p class="hero-sub">How I Utilize <strong>Business Analysis</strong> skills to Help Traders Scale Their Strategies</p>
       
       <div class="stats-banner">
         <div class="stat-item">
-          <span class="stat-val">6-figure</span>
-          <span class="stat-label">Revenue</span>
+          <span class="stat-val">Reached 6-Figure Revenue</span>
+          <span class="stat-label">Milestone Within 1st Year of Operation</span>
         </div>
         <div class="stat-item">
           <span class="stat-val">150+</span>
-          <span class="stat-label">Projects</span>
+          <span class="stat-label">Successful<br/>Projects</span>
         </div>
         <div class="stat-item highlight">
           <span class="stat-val">2</span>
-          <span class="stat-label">Editor's Picks</span>
+          <span class="stat-label">TradingView<br/>Editor's Pick</span>
         </div>
         <div class="stat-item">
           <span class="stat-val">9+ Years</span>
@@ -77,15 +77,24 @@ const projects = [
       <div class="story-content">
         <p class="story-lead">In 2021, I took my BA expertise into uncharted territory.</p>
         <p>
-          Leaving a senior role in banking, I founded Luq Technology to apply enterprise-grade rigor to the retail trading space. 
-          The shift wasn't about changing careers—it was about changing contexts. I went from designing <strong>Enterprise Credit Systems</strong> to architecting <strong>Individual Trading Solutions</strong>.
+          Leaving a senior BA role in banking domain, I founded Luq Technology to apply enterprise-grade rigor to the retail trading space. 
         </p>
         <p>
-          The core skill set remained identical: translating vague client needs into precise technical requirements, managing stakeholder expectations, and delivering robust, error-free software.
+          The shift was about changing contexts, stepping out of my comfort zone for a fresh, broader experience. I went from designing <strong>Retail Banking Credit Systems</strong> to architecting <strong>Individual Trading Solutions</strong>.
+        </p>
+        <p>
+          The <strong>core BA skillset is fundamentally unchanged</strong>: translating vague client needs into precise technical requirements, managing client's expectations, and delivering robust, error-free deliverables.
         </p>
         <div class="closure-note">
+          <p><strong>Why I’m Returning to Business Analysis</strong></p>
           <p>
-            <strong>The Pivot:</strong> When AI democratized coding in late 2024, I recognized the market shift. I chose to return to what I do best—solving complex, high-stakes problems for regulated financial institutions, bringing with me the resilience and agility of a founder.
+            <strong>The Pivot:</strong> After delivering 150+ trading solutions as a founder, it became clear that my greatest leverage has always been upstream.
+          </p>
+          <p>
+            Building Luq Technology has only sharpened my BA strengths under real delivery pressure, both as a consultant and as an entrepreneur.
+          </p>
+          <p>  
+            As <strong>AI began to democratize coding and scripting</strong>, execution accelerated and clarified where experienced Business Analysts create the most value. <strong>Returning to a BA role is a deliberate move back to where my experience compounds best</strong>.
           </p>
         </div>
       </div>
@@ -138,34 +147,6 @@ const projects = [
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section class="luq-portfolio section">
-    <div class="content-wrapper">
-      <h2 class="section-title">Technical Portfolio</h2>
-      <p class="section-desc">Public library of scripts and institutional-grade indicators.</p>
-      
-      <div class="portfolio-grid">
-        <div class="tv-profile-card">
-          <div class="tv-header">
-            <span class="tv-logo">TradingView</span>
-            <h3>fareidzulkifli</h3>
-          </div>
-          <p>Top-rated Pine Script Developer with a focus on institutional-grade tools.</p>
-          <div class="tv-stats">
-            <span><strong>High Reputation</strong> in Community</span>
-            <span><strong>2,000+</strong> Boosts</span>
-          </div>
-          <a href="https://www.tradingview.com/u/fareidzulkifli/#published-scripts" target="_blank" class="btn">View Full Profile on TradingView</a>
-        </div>
-        
-        <div class="portfolio-visual">
-          <Image src={collageShowcase} alt="Luq Technology Indicator Showcase" width={800} class="collage-img" />
-          <p class="caption">A collection of open-sourced and proprietary technical indicators.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Recognition & Testimonials -->
   <section class="luq-recognition section">
     <div class="content-wrapper">
@@ -179,6 +160,11 @@ const projects = [
         <div class="testimonial-item">
           <Image src={testimonial2} alt="Client Recognition 2" width={500} class="recognition-img" />
         </div>
+      </div>
+
+      <div class="collage-container">
+        <Image src={collageShowcase} alt="Luq Technology Indicator Showcase" width={800} class="collage-img" />
+        <p class="caption">A collection of open-sourced and proprietary technical indicators.</p>
       </div>
     </div>
   </section>
@@ -406,34 +392,6 @@ const projects = [
     border-radius: 2px;
   }
 
-  /* Portfolio Grid */
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--spacing-lg);
-    align-items: center;
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .portfolio-visual {
-    text-align: center;
-  }
-
-  .collage-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border: 1px solid var(--color-border);
-  }
-
-  .caption {
-    margin-top: var(--spacing-sm);
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    font-style: italic;
-  }
-
   /* Recognition */
   .luq-recognition {
     background-color: #f8f9fa;
@@ -445,6 +403,7 @@ const projects = [
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
   }
 
   .testimonial-item {
@@ -467,33 +426,24 @@ const projects = [
     border-radius: 4px;
   }
 
-  /* Portfolio Card */
-  .tv-profile-card {
-    background: var(--color-tv-black);
-    color: white;
-    padding: var(--spacing-lg);
-    border-radius: 8px;
+  .collage-container {
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-top: var(--spacing-lg);
   }
 
-  .tv-header {
-    margin-bottom: var(--spacing-md);
+  .collage-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-border);
   }
 
-  .tv-logo {
-    display: block;
-    font-weight: 700;
-    color: var(--color-tv-green);
-    margin-bottom: 0.5rem;
-  }
-
-  .tv-stats {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin: var(--spacing-md) 0;
-    font-size: 0.9rem;
+  .caption {
+    margin-top: var(--spacing-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-style: italic;
   }
 
   /* Closing */

@@ -14,6 +14,21 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
     </div>
   </div>
 
+  <section class="portfolio-highlight">
+    <div class="tv-profile-card">
+      <div class="tv-header">
+        <span class="tv-logo">TradingView</span>
+        <h3>fareidzulkifli</h3>
+      </div>
+      <p>Top-rated Pine Script Developer with a focus on institutional-grade tools.</p>
+      <div class="tv-stats">
+        <span><strong>High Reputation</strong> in Community</span>
+        <span><strong>2,000+</strong> Boosts</span>
+      </div>
+      <a href="https://www.tradingview.com/u/fareidzulkifli/#published-scripts" target="_blank" class="btn">View Full Profile on TradingView</a>
+    </div>
+  </section>
+
   <div class="forum-container">
     <div class="forum-toolbar">
       <div class="search-wrapper">
@@ -154,6 +169,38 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
       color: var(--color-text-muted);
       font-weight: 300;
       font-size: 1.1rem;
+  }
+
+  .portfolio-highlight {
+    margin-bottom: 2rem;
+  }
+
+  .tv-profile-card {
+    background: var(--color-tv-black);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  .tv-header {
+    margin-bottom: 1rem;
+  }
+
+  .tv-logo {
+    display: block;
+    font-weight: 700;
+    color: var(--color-tv-green);
+    margin-bottom: 0.5rem;
+  }
+
+  .tv-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
   }
 
   .forum-container {
