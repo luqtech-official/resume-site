@@ -102,6 +102,22 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
   }
 
   // Modal Logic
+  const dialogs = document.querySelectorAll('dialog');
+  dialogs.forEach(dialog => {
+      dialog.addEventListener('close', () => {
+          document.body.style.overflow = '';
+      });
+      
+      dialog.addEventListener('click', (e) => {
+          const rect = dialog.getBoundingClientRect();
+          const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height
+            && rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+          if (!isInDialog) {
+              dialog.close();
+          }
+      });
+  });
+
   document.addEventListener('click', (e) => {
     // Type assertion for cleaner TS usage
     const target = e.target as HTMLElement;
@@ -109,43 +125,16 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
     // Find trigger
     const btnTrigger = target.closest('.view-script-btn');
     
-    // Determine Modal ID
-    let modalId = null;
-    
     if (btnTrigger) {
-        modalId = btnTrigger.getAttribute('data-modal-id');
+        const modalId = btnTrigger.getAttribute('data-modal-id');
         e.preventDefault(); 
-        e.stopPropagation();
-    }
-
-    // Open Modal
-    if (modalId) {
-      const modal = document.getElementById(modalId) as HTMLDialogElement;
-      if (modal) {
-        modal.showModal();
-        document.body.style.overflow = 'hidden';
-      }
-    }
-
-    // Close Modal Button
-    const closeBtn = target.closest('.close-button');
-    if (closeBtn) {
-       const modal = closeBtn.closest('dialog');
-       if (modal) {
-         modal.close();
-         document.body.style.overflow = '';
-       }
-    }
-
-    // Close on backdrop click
-    if (target.tagName === 'DIALOG') {
-        const dialog = target as HTMLDialogElement;
-        const rect = dialog.getBoundingClientRect();
-        const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height
-          && rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
-        if (!isInDialog) {
-            dialog.close();
-            document.body.style.overflow = '';
+        
+        if (modalId) {
+            const modal = document.getElementById(modalId) as HTMLDialogElement;
+            if (modal) {
+                modal.showModal();
+                document.body.style.overflow = 'hidden';
+            }
         }
     }
   });

@@ -13,7 +13,9 @@ const { id, title, image, fullDescription } = Astro.props;
   <div class="modal-content">
     <div class="modal-header">
       <h2>{title}</h2>
-      <button class="close-button" data-close-id={id}>&times;</button>
+      <form method="dialog">
+        <button class="close-button" aria-label="Close">&times;</button>
+      </form>
     </div>
     
     <div class="modal-body">
@@ -88,21 +90,15 @@ const { id, title, image, fullDescription } = Astro.props;
     max-height: 90dvh; /* Better for mobile browsers */
     background: var(--color-white);
     color: var(--color-text-body);
-    z-index: 1000;
     
     /* Centering */
-    position: fixed;
-    inset: 0;
     margin: auto;
-    
-    /* Animation Hooks */
-    /* opacity: 0; - Removed to prevent visibility issues */
-    /* transform: scale(0.95); - Removed to prevent visibility issues */
-    
-    overscroll-behavior: contain;
   }
 
   dialog[open] {
+    display: flex;
+    flex-direction: column;
+    
     opacity: 1;
     transform: scale(1);
     animation: modal-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -133,8 +129,8 @@ const { id, title, image, fullDescription } = Astro.props;
   .modal-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    max-height: 90vh; /* Match dialog max-height */
+    flex: 1;
+    min-height: 0; /* Crucial for scrolling inside flex */
   }
 
   .modal-header {
