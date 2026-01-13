@@ -112,6 +112,10 @@ const { id, title, image, fullDescription } = Astro.props;
     opacity: 1;
     transform: scale(1) translateY(0);
     animation: modal-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    /* iOS Safari Repaint Fixes */
+    will-change: opacity, transform;
+    transform-style: preserve-3d;
   }
 
   dialog::backdrop {
@@ -144,6 +148,9 @@ const { id, title, image, fullDescription } = Astro.props;
     flex-direction: column;
     flex: 1;
     min-height: 0; /* Crucial for scrolling inside flex */
+    
+    /* iOS Safari Repaint Fix */
+    transform: translateZ(0);
   }
 
   .modal-header {
