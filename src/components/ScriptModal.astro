@@ -98,14 +98,19 @@ const { id, title, image, fullDescription } = Astro.props;
     position: fixed;
     inset: 0;
     z-index: 9999;
+
+    /* Initial state for animation - CRITICAL FOR iOS */
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
   }
 
   dialog[open] {
     display: flex;
     flex-direction: column;
     
+    /* Animate to visible state */
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(0);
     animation: modal-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
@@ -113,6 +118,8 @@ const { id, title, image, fullDescription } = Astro.props;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+    /* Initial state for backdrop - CRITICAL FOR iOS */
+    opacity: 0;
     animation: backdrop-fade 0.3s ease-out forwards;
   }
 
@@ -171,6 +178,7 @@ const { id, title, image, fullDescription } = Astro.props;
   .modal-body {
     padding: 1.5rem;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
   .global-note {
