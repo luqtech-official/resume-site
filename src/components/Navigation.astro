@@ -7,13 +7,16 @@ const currentPath = pathname.slice(1); // remove the first "/"
   <div class="container nav-wrapper">
     <ul class="nav-list">
       <li>
-        <a href="/" class={pathname === "/" ? "active" : ""}>Overview</a>
+        <a href="/" class={pathname === "/" ? "active" : ""}>Home</a>
       </li>
       <li>
-        <a href="/projects" class={pathname.startsWith("/projects") ? "active" : ""}>Projects</a>
+        <a href="/luqtech" class={pathname.startsWith("/luqtech") ? "active" : ""}>LUQ Technology</a>
       </li>
       <li>
-        <a href="/resume" class={pathname.startsWith("/resume") ? "active" : ""}>Resume</a>
+        <a href="/resume" class={pathname.startsWith("/resume") ? "active" : ""}>BA Resume</a>
+      </li>
+      <li>
+        <a href="/trading-scripts" class={pathname.startsWith("/trading-scripts") ? "active" : ""}>Trading Scripts</a>
       </li>
     </ul>
   </div>
@@ -31,7 +34,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
 
   .nav-wrapper {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .nav-list {
@@ -42,7 +45,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
 
   .nav-list a {
     display: block;
-    padding: var(--spacing-md) 0;
+    padding: 1rem 0;
     color: var(--color-text-muted);
     font-weight: 500;
     text-transform: uppercase;
@@ -50,6 +53,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
     letter-spacing: 0.15em;
     transition: color 0.3s ease;
     position: relative;
+    white-space: nowrap;
   }
 
   .nav-list a:hover {
@@ -72,11 +76,31 @@ const currentPath = pathname.slice(1); // remove the first "/"
 
   @media (max-width: 600px) {
     .nav-list {
-      gap: var(--spacing-md);
+      gap: 1rem;
+      width: 100%;
+      justify-content: space-evenly;
     }
     
     .nav-list a {
       font-size: 0.7rem;
+      padding: 0.75rem 0;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+
+    .nav-list {
+      gap: 0.25rem;
+      justify-content: space-between;
+    }
+
+    .nav-list a {
+      font-size: 0.55rem;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 0;
     }
   }
 </style>

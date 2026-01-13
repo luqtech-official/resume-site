@@ -1,0 +1,237 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  modalId: string;
+  index: number;
+}
+
+const { title, description, image, modalId, index } = Astro.props;
+const displayIndex = index + 1;
+---
+
+<div class="script-row">
+  <!-- Rank/Index Column -->
+  <div class="rank-col">
+    <span class="rank-number">{displayIndex.toString().padStart(2, '0')}</span>
+  </div>
+
+  <!-- Content Column -->
+  <div class="content-col">
+    <div class="header-row">
+      <h3 class="script-title">{title}</h3>
+      <!-- <span class="tag">Pine Script v5</span>
+      <span class="meta-dot">•</span>
+      <span class="meta-text">TradingView</span> -->
+    </div>
+    
+    <p class="script-desc">{description}</p>
+  </div>
+
+  <!-- Thumbnail & Action Column -->
+  <div class="thumb-col">
+    <button class="view-script-btn" data-modal-id={modalId}>
+    View SourceCode
+    </button>
+    <div class="thumb-wrapper">
+      <img src={image} alt={title} loading="lazy" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .script-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-white);
+    transition: background-color 0.15s ease;
+    gap: 1.5rem;
+  }
+
+  .script-row:hover {
+    background-color: #f8f9fa; /* Slightly darker than white */
+  }
+
+  .script-row:last-child {
+    border-bottom: none;
+  }
+
+  /* Rank Column */
+  .rank-col {
+    flex: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.4rem;
+    color: var(--color-text-muted);
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  /* Thumbnail & Action Column */
+  .thumb-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    min-width: 140px; /* Ensure space for button */
+  }
+
+  .thumb-wrapper {
+    width: 120px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #eee;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Content Column */
+  .content-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-top: 0.2rem;
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .script-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .tag {
+    background-color: #eef2ff;
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(0, 51, 102, 0.1);
+  }
+
+  .meta-dot {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  .meta-text {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .script-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-body);
+    margin: 0.25rem 0 0.5rem 0;
+    line-height: 1.5;
+    /* Clamp to 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .view-script-btn {
+    appearance: none;
+    background: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 6px 14px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .view-script-btn:hover {
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+  }
+
+  .view-script-btn:active {
+    background: #f0f0f0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transform: translateY(0);
+  }
+
+  .view-script-btn .icon {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    .rank-col {
+      display: none;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .script-row {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .thumb-col {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .thumb-wrapper {
+      width: 80px;
+      height: 60px;
+      order: 2; /* Image on right */
+    }
+    
+    .view-script-btn {
+      order: 1; /* Button on left */
+      margin-bottom: 0;
+      padding: 6px 10px; /* Slightly smaller button */
+      font-size: 0.65rem;
+    }
+
+    .content-col {
+      width: 100%;
+      padding-top: 0;
+    }
+
+    .script-title {
+      font-size: 1rem;
+    }
+  }
+</style>

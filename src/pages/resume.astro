@@ -1,82 +1,110 @@
 --- 
 import Layout from '../layouts/Layout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 ---
 
-<Layout title="Resume">
+<Layout title="Resume | Muhammad Fareid Bin Zulkifli">
   <div class="resume-wrapper">
+    <!-- Status / Availability -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-item">
+          <span class="status-label">Open to new Business Analyst Opportunities:</span>
+          <span class="status-value highlight-status">Yes</span>
+        </div>
+        <span class="separator-dot">•</span>
+        <div class="status-item">
+          <span class="status-label">Availability:</span>
+          <span class="status-value">Immediate</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
     <header class="resume-header">
       <h1 class="name">Muhammad Fareid Bin Zulkifli</h1>
       <div class="contact-info">
-        <span class="contact-item">fareidzulkifli@gmail.com</span>
-        <span class="separator">/</span>
-        <span class="contact-item">Kepong, 52100 Kuala Lumpur, Malaysia</span>
+        <div class="contact-item">
+          fareidzulkifli@gmail.com
+          <!-- <span class="contact-separator">|</span> -->
+          <!-- <WhatsAppButton /> -->
+        </div>
+        <div class="contact-item">Kepong, 52100 Kuala Lumpur, Malaysia</div>
       </div>
     </header>
 
-    <!-- Section: Profile -->
+    <!-- Section: Professional Summary -->
     <section class="resume-section">
       <div class="section-divider">
-        <h2 class="section-title">Profile</h2>
+        <h2 class="section-title">Professional Summary</h2>
       </div>
       <div class="section-content">
         <p class="summary-text">
-          Senior <span class="highlight">Business Analyst</span> with over <span class="highlight">9 years</span> of experience in highly regulated financial domains including Banking, Consumer Credit, and Fintech. Proven track record of bridging the gap between <span class="highlight">business strategy</span> and <span class="highlight">technical execution</span>. Recently completed a 4-year tenure as a <span class="highlight">technical founder</span>, gaining deep expertise in full-cycle product development, requirement gathering, and stakeholder management. Now returning to corporate practice to apply this hybrid skill set to complex, workflow-driven systems.
+          Experienced <strong>Business Analyst</strong> with <strong>9+ years</strong> delivering solutions in highly regulated Banking, Consumer Credit, and Trading Strategy domains. Recognized for rapid problem-solving and solution design, supported by a hybrid skill set that combines business domain expertise with deep technical fluency. Led and delivered multiple successful go-live deployments for complex, workflow-driven systems across major financial institutions.
         </p>
       </div>
     </section>
 
-    <!-- Section: Working Experience -->
+    <!-- Section: Professional Experiences -->
     <section class="resume-section">
       <div class="section-divider">
-        <h2 class="section-title">Working Experience</h2>
+        <h2 class="section-title">Professional Experience</h2>
       </div>
       <div class="section-content">
         <div class="timeline-grid">
+          
           <!-- Job 1 -->
-          <div class="timeline-date">2021 – 2025</div>
-          <div class="timeline-body">
-            <div class="role-header">
-              <h3 class="job-title">Founder & Lead Developer</h3>
-              <span class="company-name">Luq Technology</span>
+          <div class="timeline-item">
+            <div class="timeline-date">Jun 2021 – Dec 2025</div>
+            <div class="timeline-body">
+              <div class="role-header">
+                <h3 class="job-title">Founder</h3>
+                <span class="company-name">Luq Technology</span>
+              </div>
+              <ul class="job-details">
+                <li>Founded and operated specialized consultancy developing personalized trading indicators for TradingView platform, serving individual traders and trading education providers.</li>
+                <li>Delivered end-to-end trading solution development for more than <strong>150 projects</strong> spanning requirements gathering, iterative refinement, testing, and deployment by applying full SDLC methodology adapted from previous enterprise BA experience.</li>
+                <li>Successfully reached <strong>6-figure revenue milestones</strong> within the 1st year of operations.</li>
+                <li>Achieved industry recognition with <strong>2 open-source indicators selected as TradingView Editor's Picks</strong> and public endorsements from established Malaysian trading educators for scripting proprietary strategies.</li>
+              </ul>
             </div>
-            <ul class="job-details">
-              <li>Founded a specialized consultancy developing custom algorithmic trading solutions for the TradingView platform.</li>
-              <li>Managed the full SDLC for <strong>150+ bespoke projects</strong>, serving a diverse client base of professional traders.</li>
-              <li>Translated ambiguous client trading strategies into precise, executable logic (Pine Script), ensuring 100% alignment with business rules.</li>
-              <li>Achieved <strong>6-figure revenue</strong> in the first year through rigorous process optimization and client retention strategies.</li>
-              <li><strong>Recognition:</strong> Two open-source indicators selected as "Editor’s Picks" by TradingView (top 0.1% of published scripts).</li>
-            </ul>
           </div>
 
           <!-- Job 2 -->
-          <div class="timeline-date">2017 – 2021</div>
-          <div class="timeline-body">
-            <div class="role-header">
-              <h3 class="job-title">Associate Manager, Business Consulting</h3>
-              <span class="company-name">Hitachi Ebworx</span>
+          <div class="timeline-item">
+            <div class="timeline-date">Jan 2017 – May 2021</div>
+            <div class="timeline-body">
+              <div class="role-header">
+                <h3 class="job-title">Associate Manager, Business Consultant</h3>
+                <span class="company-name">Hitachi Ebworx, Petaling Jaya, Selangor</span>
+              </div>
+              <ul class="job-details">
+                <li>Led cross-functional BC teams across full SDLC phases to deliver successful new projects and Change Requests for <strong>CIMB Singapore and Malaysia’s</strong> entire consumer credit application processes.</li>
+                <li>Spearheaded re-platform initiatives for credit management system to modern architecture, reducing end-to-end manual processing time from several days to <strong>near instant approval process</strong>.</li>
+                <li>Led <strong>Production Verification Testing</strong> teams across multiple critical deployments, leveraging unique dual business-technical expertise to rapidly diagnose issues, propose immediate workarounds, and provide decisive analysis that informed client go/no-go decisions.</li>
+                <li>Designed and delivered the company’s first <strong>SQL training programme</strong> for Business Consultants, including curriculum development, to strengthen analytical capability and cross-functional collaboration.</li>
+                <li>Generated new business revenue by analysing and proposing additional functionalities through new Change Request contracts that are aligned with client’s evolving business needs.</li>
+              </ul>
             </div>
-            <ul class="job-details">
-              <li>Led cross-functional teams in the digital transformation of Consumer Credit workflows for <strong>CIMB Singapore & Malaysia</strong>.</li>
-              <li>Spearheaded a legacy system re-platforming initiative, reducing application processing time from days to <strong>near-instant approval</strong>.</li>
-              <li>Directed Production Verification Testing (PVT), leveraging dual business-technical knowledge to triage critical issues during high-pressure go-live windows.</li>
-              <li>Designed and conducted the department’s first <strong>SQL for Business Analysts</strong> training program, significantly improving the team's data autonomy.</li>
-            </ul>
           </div>
 
           <!-- Job 3 -->
-          <div class="timeline-date">2015 – 2016</div>
-          <div class="timeline-body">
-            <div class="role-header">
-              <h3 class="job-title">Senior System Analyst</h3>
-              <span class="company-name">Juris Technologies</span>
+          <div class="timeline-item">
+            <div class="timeline-date">Mar 2015 – Aug 2016</div>
+            <div class="timeline-body">
+              <div class="role-header">
+                <h3 class="job-title">Senior System Analyst</h3>
+                <span class="company-name">Juris Technologies, Bangsar South, Kuala Lumpur</span>
+              </div>
+              <ul class="job-details">
+                <li>Bridged business, IT, and executive stakeholders across multiple banking projects, ensuring cross-functional alignment and requirements clarity. Clients involved: <strong>Agrobank, Bank Rakyat and Bank Persatuan</strong>.</li>
+                <li>Delivered functional consultancy for <strong>Loan Origination Systems</strong>, supporting integrations with Core Banking, CCRIS, CTOS, Biro Angkasa, credit scoring engines, and related banking platforms.</li>
+                <li>Adapted rapidly across diverse client environments, navigating varying business rules, regulatory requirements, and system landscapes.</li>
+                <li>Founding member of elite <strong>Proactive Customer Service (PCS)</strong> team, requiring mastery of multiple banks' unique system requirements to resolve post-go-live issues and change requests which significantly reduced operational burden on active project teams.</li>
+              </ul>
             </div>
-            <ul class="job-details">
-              <li>Served as the primary liaison between banking clients (Agrobank, Bank Rakyat) and engineering teams for Loan Origination Systems.</li>
-              <li>Facilitated complex integrations with Core Banking Systems, CCRIS, and CTOS data providers.</li>
-              <li>Selected for the elite <strong>Proactive Customer Service</strong> squad to stabilize critical post-deployment issues.</li>
-            </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -88,46 +116,56 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="section-content">
         <div class="timeline-grid">
-          <div class="timeline-date">2015</div>
-          <div class="timeline-body">
-            <div class="role-header">
-              <h3 class="job-title">Bachelor of Mathematical Sciences (Hons)</h3>
-              <span class="company-name">International Islamic University Malaysia</span>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">2015</div>
+            <div class="timeline-body">
+              <div class="role-header">
+                <h3 class="job-title">Bachelor of Mathematical Sciences (Hons)</h3>
+                <span class="company-name">International Islamic University Malaysia (IIUM)</span>
+              </div>
+              <p class="education-meta">Major in Financial Mathematics, Minor in Business Administration.</p>
             </div>
-            <p class="education-meta">Major in Financial Mathematics, Minor in Business Administration.</p>
           </div>
 
-          <div class="timeline-date">2008</div>
-          <div class="timeline-body">
-            <div class="role-header">
-              <h3 class="job-title">Sijil Pelajaran Malaysia (SPM)</h3>
-              <span class="company-name">MRSM Alor Gajah, Melaka</span>
+          <div class="timeline-item">
+            <div class="timeline-date">2008</div>
+            <div class="timeline-body">
+              <div class="role-header">
+                <h3 class="job-title">Sijil Pelajaran Malaysia (SPM)</h3>
+                <span class="company-name">MRSM Alor Gajah, Melaka</span>
+              </div>
+              <p class="education-meta">Science Stream</p>
             </div>
-            <p class="education-meta">Science Stream</p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Section: Capabilities -->
+    <!-- Section: Skills -->
     <section class="resume-section">
       <div class="section-divider">
-        <h2 class="section-title">Capabilities</h2>
+        <h2 class="section-title">Skills</h2>
       </div>
       <div class="section-content">
-        <div class="capabilities-grid">
-          <div class="capability-item">
-            <h4>Analysis & Strategy</h4>
-            <p>Requirements Elicitation • Process Modelling (BPMN) • Gap Analysis • Stakeholder Management • UAT Coordination • Workshop Facilitation</p>
+        <div class="skills-list">
+          
+          <div class="skill-group">
+            <h4 class="skill-category">Business Analysis & Requirements</h4>
+            <p class="skill-items">Requirements Elicitation & Functional Documentation, Stakeholder Management, Gap Analysis, Process Mapping, User Acceptance Testing (UAT), Production Verification Testing</p>
           </div>
-          <div class="capability-item">
-            <h4>Technical Proficiency</h4>
-            <p>Advanced SQL • System Architecture Basics • API Integration Concepts • SDLC (Agile & Waterfall) • Data Mapping</p>
+
+          <div class="skill-group">
+            <h4 class="skill-category">Technical & Data</h4>
+            <p class="skill-items">SQL (Database Analysis & Querying), Core Banking Systems Integration, API Integration, Scripting & Automation, SDLC Methodologies, System Design & Architecture Understanding</p>
           </div>
-          <div class="capability-item">
-            <h4>Domain Knowledge</h4>
-            <p>Retail Banking • Consumer Credit (Origination & Collection) • Algorithmic Trading • Financial Compliance</p>
+
+          <div class="skill-group">
+            <h4 class="skill-category">Project & Leadership</h4>
+            <p class="skill-items">Cross-functional Team Leadership, Training Programme Design & Delivery, Client Relationship Management, Change Request Management, Revenue Generation through Solution Design</p>
           </div>
+
         </div>
       </div>
     </section>
@@ -136,134 +174,182 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   /* 
-    PREMIUM MINIMALIST THEME v2
-    Focus: Distinction, Structure, Whitespace
+    PREMIUM RESUME THEME
+    Refined for Mobile Clarity and Professionalism
   */
 
   .resume-wrapper {
-    max-width: 850px;
-    margin: 6rem auto;
+    max-width: 900px;
+    margin: 4rem auto;
     padding: 0 2rem;
-    color: #333;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* --- Status Bar --- */
+  .status-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .status-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+
+  .status-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .status-label {
+    color: #666;
+  }
+
+  .status-value {
+    font-weight: 600;
+  }
+
+  .highlight-status {
+    color: #003366;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .highlight-status::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #003366;
+    border-radius: 50%;
+  }
+
+  .separator-dot {
+    color: #ddd;
   }
 
   /* --- Header --- */
   .resume-header {
-    margin-bottom: 8rem;
-    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 2.5rem;
+    text-align: center;
   }
 
   .name {
-    font-size: 2.75rem;
-    font-weight: 300;
+    font-size: 2.0rem;
+    font-weight: 700;
     letter-spacing: -0.02em;
-    color: #111;
-    margin-bottom: 1.25rem;
+    color: #000;
+    margin-bottom: 0.75rem;
     line-height: 1.1;
   }
 
-  .contact-info {
-    font-size: 0.95rem;
-    color: #666;
+  .contact-item {
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-weight: 400;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
-  .separator {
+  .contact-separator {
     color: #ccc;
-    font-size: 0.8rem;
+    margin: 0 0.2rem;
   }
 
   /* --- Section Structure --- */
   .resume-section {
-    margin-bottom: 8rem;
+    margin-bottom: 3.5rem;
   }
 
-  .section-divider {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
+  @media (min-width: 768px) {
+    .resume-section {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+    }
+    
+    .section-divider {
+      text-align: right;
+      border-right: 1px solid #f0f0f0;
+      padding-right: 1.5rem;
+    }
+
+    .section-title {
+      position: sticky;
+      top: 2rem;
+    }
   }
 
-  .section-divider::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background-color: #eee;
+  @media (max-width: 767px) {
+    .section-divider {
+      border-bottom: 1px solid #f0f0f0;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
   }
 
   .section-title {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: #999;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
-  .section-content {
-    padding-left: 0; /* Keep it clean and aligned to edge */
-  }
-
-  /* --- Summary / Profile --- */
-  .summary-text {
-    font-size: 1.15rem;
-    line-height: 1.85;
-    color: #444;
-    max-width: 90%;
-    font-weight: 300;
-  }
-
-  .highlight {
+    letter-spacing: 0.12em;
     color: #003366;
-    font-weight: 500;
+    font-weight: 700;
   }
 
-  /* --- Timeline Grid (Experience & Education) --- */
+  /* --- Content Styling --- */
+  .summary-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
   .timeline-grid {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .timeline-item {
+    display: flex;
+    flex-direction: column;
   }
 
   .timeline-date {
-    font-size: 0.9rem;
-    color: #999;
-    font-feature-settings: "tnum";
-    padding-top: 0.35rem; /* Align with title */
-    text-align: left;
-    font-weight: 400;
-  }
-
-  .timeline-body {
-    margin-bottom: 4rem;
-  }
-
-  .timeline-body:last-child {
-    margin-bottom: 0;
-  }
-
-  .role-header {
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: #777;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 
   .job-title {
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: #111;
-    margin-bottom: 0.35rem;
-    line-height: 1.2;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.2rem;
   }
 
   .company-name {
-    font-size: 1rem;
-    color: #003366;
-    font-weight: 400;
-    letter-spacing: 0.01em;
+    font-size: 1.05rem;
+    color: #444;
+    font-style: italic;
+    display: block;
+    margin-bottom: 1rem;
   }
 
   .job-details {
@@ -272,95 +358,109 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .job-details li {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: #555;
-    margin-bottom: 1rem;
-    font-weight: 300;
-    display: flex;
-    align-items: flex-start;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+    position: relative;
   }
 
   .job-details li::before {
-    content: "—";
-    margin-right: 15px;
-    color: #ccc;
-    flex-shrink: 0;
-  }
-
-  .job-details li strong {
-    font-weight: 500;
-    color: #333;
-  }
-
-  /* --- Education Meta --- */
-  .education-meta {
-    font-size: 1.05rem;
-    color: #666;
-    font-weight: 300;
-    line-height: 1.6;
-  }
-
-  /* --- Capabilities Grid --- */
-  .capabilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 4rem;
-  }
-
-  .capability-item h4 {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+    content: "•";
+    position: absolute;
+    left: 0;
     color: #003366;
-    margin-bottom: 1.25rem;
-    font-weight: 700;
+    font-weight: bold;
   }
 
-  .capability-item p {
-    font-size: 1.05rem;
-    line-height: 1.85;
+  .education-meta {
+    font-size: 1rem;
     color: #555;
-    font-weight: 300;
   }
 
-  /* --- Mobile Responsive --- */
+  .skill-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-category {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .skill-items {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  /* --- Mobile Refinements --- */
   @media (max-width: 768px) {
     .resume-wrapper {
-      margin: 4rem auto;
-      padding: 0 1.5rem;
-    }
-
-    .resume-header {
-      margin-bottom: 5rem;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
     }
 
     .name {
-      font-size: 2.25rem;
+      font-size: 1.6rem;
     }
 
-    .section-divider {
-      margin-bottom: 2.5rem;
+    .section-title {
+      font-size: 1.1rem;
+    }
+
+    .status-bar-container{
+      justify-content: center;
+    }
+
+    .status-bar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.6rem;
+      width: 80%;
+    }
+
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .separator-dot {
+      display: none;
     }
 
     .timeline-grid {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
+      gap: 2rem;
     }
 
-    .timeline-date {
-      color: #003366;
-      font-weight: 500;
+    .job-title {
+      font-size: 1.1rem;
+    }
+
+    .company-name {
+      font-size: 1rem;
+    }
+
+    .job-details li {
       margin-bottom: 0.5rem;
     }
+  }
 
-    .timeline-body {
-      margin-bottom: 5rem;
+  /* --- Extra Small Mobile (< 425px) --- */
+  @media (max-width: 425px) {
+    .summary-text,
+    .job-details li,
+    .education-meta,
+    .skill-items {
+      font-size: 0.9rem;
     }
-
-    .capabilities-grid {
-      gap: 3rem;
+    .status-bar {
+      width: 100%;
     }
   }
 </style>
-
