@@ -13,32 +13,32 @@ import collageShowcase from '../../public/Luq Technology OpenSourced Indicator C
 const projects = [
   {
     title: "Pro Dashboard: Multi-Condition Market Analysis",
-    type: "Complex Logic & UI Design",
-    challenge: "A professional trading group needed to monitor 4 distinct market conditions (Trend, Volume, Volatility, Key Levels) across multiple timeframes simultaneously, but standard charts were too cluttered to be usable.",
-    ba_approach: "I structured requirement sessions to categorize essential data points, designed a tabular UI wireframe to maximize information density, and iteratively refined the logic for 'at-a-glance' status indicators.",
-    outcome: "Delivered a 'Pro Dashboard' utility that condenses 20+ data points into a single panel, reducing analysis time by ~40% for the client's morning routine.",
+    type: "Quality of Life & UI Design",
+    problem: "Professional trading groups needed to monitor 4 distinct market conditions (Trend, Volume, Volatility, Key Levels) across multiple timeframes simultaneously. Standard charts were cluttered, making rapid decision-making inefficient.",
+    solution: "I structured requirements to categorize essential data, designed a high-density tabular UI wireframe, and implemented 'at-a-glance' logic. The solution condenses 20+ data points (including Regression Channels, Dollar Normalized Volume, and Gann Grids) into a single, clean panel.",
+    outcome: "Delivered a 'Pro Dashboard' utility that reduces daily analysis time by ~40%. It became the central tool for the client's morning routine, allowing for immediate assessment of market conditions without switching charts.",
     image: proDashboardImg,
-    tech_note: "Implemented using Pine Script v4 with dynamic table arrays and regression channel logic."
+    tech_note: "Multiple discussions with several traders allowed me to understand what they actually need to see over what they want to see. This made it easier to determine which information was truly essential and should be included in the dashboard for monitoring purposes."
   },
   {
     title: "Sector SigmaSpikes",
     type: "Algorithmic Screener",
     isEditorsPick: true,
-    challenge: "Traders in the Malaysian market struggled to identify sector rotation early. Existing tools were either too expensive or lacked specific 'abnormal movement' detection.",
-    ba_approach: "Defined the statistical model ('Sigma Spikes') based on standard deviation of returns. Mapped 13 key sector indices and designed a screener view to highlight significant outliers.",
-    outcome: "Selected as an 'Editor's Pick' by TradingView. The tool allows users to instantly spot capital flow into specific sectors, becoming a staple for local breakout traders.",
+    problem: "Traders in the Malaysian market struggled to spot early sector rotation. Existing tools lacked the specific capability to detect 'abnormal movements' or outliers that signal the start of a trend.",
+    solution: "I defined a statistical model ('Sigma Spikes') using standard deviation of returns to flag anomalies. I then engineered a screener to monitor 13 key sector indices simultaneously, overcoming execution limits by optimizing data queries.",
+    outcome: "Selected as a TradingView Editor's Pick. The tool empowers traders to instantly visualize capital flow, becoming a staple for spotting sector breakouts early.",
     image: sigmaSpikesImg,
-    tech_note: "Features a custom security function to query 13 tickers simultaneously without hitting execution limits."
+    tech_note: "Finding the right Subject Matter Expert on subjective topic was the hard part for this. Only after aggregating the feedback from several Trading Instructors did I manage to decide which statistical model i should use to flag the potential sector breakouts."
   },
   {
     title: "Mean Reversion Channel",
-    type: "Educator Collaboration",
+    type: "Complex Logic & Domain Expertise",
     isEditorsPick: true,
-    challenge: "A trading educator needed a visual tool to teach 'Mean Reversion' theory without overwhelming students with complex math formulas.",
-    ba_approach: "Translated the proprietary strategy (based on Ehlers' filters) into a scalable teaching tool. Focused on clear visual cues (bands) rather than raw numbers to aid pattern recognition.",
-    outcome: "Selected as an 'Editor's Pick' by TradingView. The script became a core part of their curriculum, helping non-technical students grasp complex statistical concepts through visual learning.",
+    problem: "Inconsistent volatility often creates noise, making it difficult for traders to distinguish between a true trend reversal and temporary price fluctuations.",
+    solution: "I developed a multi-layered channel system using advanced smoothing algorithms (Ehlers' SuperSmoother and Gaussian filters). This creates a stable 'mean' and dynamic outer bands that visually separate noise from significant overextended moves.",
+    outcome: "Selected as a TradingView Editor's Pick. It serves as a reliable visual aid for decision-making, helping traders objectively identify overbought/oversold conditions with greater confidence.",
     image: mriImg,
-    tech_note: "Combines SuperSmoother algorithms with dynamic bands to create a noise-filtered trend visualizer."
+    tech_note: "Pinpointing the exact underlying problems with existing methods was key to building this indicator. Each trader described different challenges they faced with dynamic support and resistance levels. Further investigation revealed that all these issues stemmed from a common source: inconsistent volatility levels. This insight is what led me to smooth a multi-layered band from its center, creating the Mean Reversion Channel, my most popular indicator to date."
   }
 ];
 ---
@@ -48,13 +48,9 @@ const projects = [
   <section class="luq-hero">
     <div class="content-wrapper">
       <h1 class="hero-title">From Highly Regulated Banking Domain<br>to 150+ Trading Solutions</h1>
-      <p class="hero-sub">How I Utilize <strong>Business Analysis</strong> skills to Help Traders Scale Their Strategies</p>
+      <p class="hero-sub">How I Utilize <strong>Business Analysis</strong> Skills to Help Traders Scale Their Strategies</p>
       
       <div class="stats-banner">
-        <div class="stat-item">
-          <span class="stat-val">Reached 6-Figure Revenue</span>
-          <span class="stat-label">Milestone Within 1st Year of Operation</span>
-        </div>
         <div class="stat-item">
           <span class="stat-val">150+</span>
           <span class="stat-label">Successful<br/>Projects</span>
@@ -67,6 +63,10 @@ const projects = [
           <span class="stat-val">9+ Years</span>
           <span class="stat-label">BA Experience</span>
         </div>
+        <div class="stat-item">
+          <span class="stat-val">Reached 6-Figure Revenue</span>
+          <span class="stat-label">Milestone Within 1st Year of Operation</span>
+        </div>
       </div>
     </div>
   </section>
@@ -75,7 +75,18 @@ const projects = [
   <section class="luq-story section">
     <div class="content-wrapper">
       <div class="story-content">
-        <p class="story-lead">In 2021, I took my BA expertise into uncharted territory.</p>
+        <div class="closure-note">
+          <p><strong>Why I’m Returning to the Business Analyst Role</strong></p>
+          <p>
+            After delivering 150+ trading solutions as a founder, it became clear that my greatest leverage has always been upstream.
+          </p>
+          <p>  
+            <!-- <strong>The Pivot:</strong> As AI made execution easier, clients could do more themselves or found cheaper alternatives. This market shift clarified that my real value was never in the coding, it was in defining the 'WHY' behind every requirement and designing solutions around the often messy constraints, which can't be automated. <strong>I'm returning to where that upstream work is most leveraged: enterprise BA roles.</strong> -->
+            <strong>The Pivot:</strong> Especially now, as Generative AI made execution much easier, clients could do more themselves. This market shift clarified that my real value actually lay: <br/><br/>It was in defining the 'WHY' behind every requirement and designing solutions around often messy constraints. <strong>That's the most satisfying and irreplaceable part of BA work, and it's where I'm returning to compound my experience: enterprise BA roles.</strong>
+          </p>
+        </div>
+
+        <p class="story-lead"><br/>In 2021, I took my BA expertise into uncharted territory.</p>
         <p>
           Leaving a senior BA role in banking domain, I founded Luq Technology to apply enterprise-grade rigor to the retail trading space. 
         </p>
@@ -83,20 +94,9 @@ const projects = [
           The shift was about changing contexts, stepping out of my comfort zone for a fresh, broader experience. I went from designing <strong>Retail Banking Credit Systems</strong> to architecting <strong>Individual Trading Solutions</strong>.
         </p>
         <p>
-          The <strong>Core BA skillset is fundamentally unchanged</strong>: translating vague client needs into precise technical requirements, managing client's expectations, and delivering robust, error-free deliverables.
+          <strong>This experience expanded my BA toolkit by</strong> handling more than hundreds of full requirement cycles end-to-end, from initial elicitation through delivery, with a more direct accountability that sharpened my ability to extract precise requirements and anticipate edge cases.
         </p>
-        <div class="closure-note">
-          <p><strong>Why I’m Returning to Business Analysis</strong></p>
-          <p>
-            After delivering 150+ trading solutions as a founder, it became clear that my greatest leverage has always been upstream.
-          </p>
-          <p>
-            Building Luq Technology has only sharpened my BA strengths under real delivery pressure, both as a consultant and as an entrepreneur.
-          </p>
-          <p>  
-            <strong>The Pivot:</strong> As AI began to democratize coding and scripting, execution accelerated and clarified where experienced Business Analysts create the most value. <strong>Returning to a BA role is a deliberate move back to where my experience compounds best</strong>.
-          </p>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -105,7 +105,7 @@ const projects = [
   <section class="luq-showcase section">
     <div class="content-wrapper">
       <h2 class="section-title">Featured Projects</h2>
-      <p class="section-desc">Selected works demonstrating Requirement Analysis, Solution Design, and Delivery.</p>
+      <p class="section-desc">Selected works demonstrating Requirement Analysis, Solution Design, Development and Delivery.</p>
       
       <div class="project-grid">
         {projects.map((project, index) => (
@@ -119,21 +119,21 @@ const projects = [
               
               <div class="ba-breakdown">
                 <div class="breakdown-item">
-                  <span class="label">The Challenge</span>
-                  <p>{project.challenge}</p>
+                  <span class="label">The Problem</span>
+                  <p>{project.problem}</p>
                 </div>
                 <div class="breakdown-item">
-                  <span class="label">BA Approach</span>
-                  <p>{project.ba_approach}</p>
+                  <span class="label">How I Solve This</span>
+                  <p>{project.solution}</p>
                 </div>
                 <div class="breakdown-item">
-                  <span class="label">Outcome</span>
+                  <span class="label">The Outcome</span>
                   <p>{project.outcome}</p>
                 </div>
               </div>
               
               <div class="tech-note">
-                <small><strong>Technical Note:</strong> {project.tech_note}</small>
+                <small><strong>BA Notes:</strong> {project.tech_note}</small>
               </div>
             </div>
             <div class="project-visual">
@@ -143,6 +143,10 @@ const projects = [
             </div>
           </article>
         ))}
+      </div>
+
+      <div class="view-all-container">
+        <a href="/trading-scripts" class="btn-subtle">View All Open Source Scripts &rarr;</a>
       </div>
     </div>
   </section>
@@ -173,13 +177,13 @@ const projects = [
   <section class="luq-closing section">
     <div class="content-wrapper">
       <div class="closing-card">
-        <h2>What This Means for Your Next Role</h2>
+        <h2>What This Means for My Next BA Role</h2>
         <p class="closing-text">
-          This 4-year journey reinforced core BA competencies while adding entrepreneurial resilience.
-          I am ready to bring both <strong>enterprise rigor</strong> and <strong>startup adaptability</strong> to my next Business Analyst role.
+          This 4-year journey greatly reinforced my core BA competencies while adding entrepreneurial resilience and a deeper technical fluency.
+          <br/><br/>I am ready to bring both <strong>enterprise rigor</strong> and <strong>startup adaptability</strong> to my next Business Analyst role.
         </p>
         <div class="action-area">
-          <a href="/resume" class="btn">View Professional Resume</a>
+          <a href="/" class="btn">View Professional Resume</a>
         </div>
       </div>
     </div>
@@ -214,8 +218,8 @@ const projects = [
     font-size: 1.25rem;
     color: var(--color-text-body);
     margin-bottom: var(--spacing-lg);
-    font-family: var(--font-serif);
-    font-style: italic;
+    font-family: var(--font-inter);
+    font-weight: 400;
   }
 
   .stats-banner {
@@ -367,14 +371,14 @@ const projects = [
 
   .tech-note {
     margin-top: var(--spacing-md);
-    padding-top: var(--spacing-sm);
+    /* padding-top: var(--spacing-sm); */
     border-top: 1px dashed var(--color-border);
     color: var(--color-text-muted);
   }
 
   .img-container {
     background: white;
-    padding: var(--spacing-xs);
+    /* padding: var(--spacing-xs); */
     border: 1px solid var(--color-border);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border-radius: 4px;
@@ -390,6 +394,28 @@ const projects = [
     height: auto;
     display: block;
     border-radius: 2px;
+  }
+  
+  .view-all-container {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .btn-subtle {
+    display: inline-block;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-subtle:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background-color: white;
   }
 
   /* Recognition */
@@ -458,7 +484,7 @@ const projects = [
   }
 
   .closing-text {
-    font-size: 1.25rem;
+    font-size: 0.9rem;
     margin-bottom: var(--spacing-md);
   }
 
