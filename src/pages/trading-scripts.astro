@@ -133,7 +133,10 @@ const scripts = await Astro.glob('../data/trading-scripts/*.md');
             const modal = document.getElementById(modalId) as HTMLDialogElement;
             if (modal) {
                 modal.showModal();
-                document.body.style.overflow = 'hidden';
+                // Use requestAnimationFrame to ensure modal is rendered first
+                requestAnimationFrame(() => {
+                    document.body.style.overflow = 'hidden';
+                });
             }
         }
     }
