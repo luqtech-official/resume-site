@@ -1,6 +1,8 @@
 --- 
 import Layout from '../layouts/Layout.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { Image } from 'astro:assets';
+import profileImg from '../../public/profile-image.jpg';
 ---
 
 <Layout title="Resume | Muhammad Fareid Bin Zulkifli">
@@ -22,10 +24,13 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 
     <!-- Header -->
     <header class="resume-header">
+      <div class="profile-container">
+        <Image src={profileImg} alt="Muhammad Fareid Bin Zulkifli" width={120} height={120} class="profile-img" />
+      </div>
       <h1 class="name">Muhammad Fareid Bin Zulkifli</h1>
       <div class="contact-info">
         <div class="contact-item">
-          fareidzulkifli@gmail.com
+          <a href="mailto:fareidzulkifli@gmail.com">fareidzulkifli@gmail.com</a>
           <!-- <span class="contact-separator">|</span> -->
           <!-- <WhatsAppButton /> -->
         </div>
@@ -247,6 +252,29 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
     text-align: center;
   }
 
+  .profile-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transform: scale(1.3);
+    transform-origin: top center;
+  }
+
   .name {
     font-size: 2.0rem;
     font-weight: 700;
@@ -264,6 +292,15 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
     justify-content: center;
     gap: 0.5rem;
     flex-wrap: wrap;
+  }
+
+  .contact-item a {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+
+  .contact-item a:hover {
+    color: #004499;
   }
 
   .contact-separator {
